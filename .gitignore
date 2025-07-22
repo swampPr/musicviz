@@ -1,0 +1,6 @@
+.env
+node_modules
+.prettierrc
+package-lock.json
+package.json
+TODO.js

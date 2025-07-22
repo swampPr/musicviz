@@ -1,0 +1,333 @@
+/* === THEME ROOT === */
+:root {
+    --primary: #111;
+    --secondary: #555;
+    --accent: #e91e63;
+    --bg: #fdfdfd;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+/* === RESET === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--primary);
+    line-height: 1.5;
+    padding: 0 1rem;
+}
+
+/* === NAVBAR === */
+#navbar {
+    width: 100%;
+    background-color: #222;
+    padding: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(233, 30, 99, 0.15); /* pink accent */
+}
+
+#website-heading {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--accent);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    user-select: none;
+}
+
+#heading-link {
+    text-decoration: none;
+    color: var(--accent);
+    display: inline-block;
+}
+
+#heading-link:hover {
+    color: #c71585;
+}
+
+/* Navbar items */
+#nav-items {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-wrap: wrap;
+    margin-top: 0.4rem;
+}
+
+.nav-link {
+    color: #eee;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    background-color: var(--accent);
+    color: var(--card-bg);
+}
+
+.separator {
+    color: var(--accent);
+    user-select: none;
+    padding: 0 0.3rem;
+}
+
+/* === MAIN BODY === */
+#main-body {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* === SONG OF THE DAY === */
+#song-of-the-day {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* === NEWS CONTAINER === */
+#news-container {
+    flex: 1 1 600px;
+    max-width: 700px;
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow:
+        0 0 8px rgba(233, 30, 99, 0.6),
+        /* subtle pink glow */ 0 2px 5px rgba(0, 0, 0, 0.05);
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+
+#news-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #e91e63, #ff4081, #f48fb1);
+    z-index: -1;
+}
+
+/* === NEWS LIST === */
+#news-list {
+    list-style: none;
+}
+
+/* Each news entry as flex container */
+.news-entry {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Container for the news image with gradient border */
+.cover-container {
+    display: inline-block;
+    border-radius: 12px;
+    padding: 4px; /* slightly thicker gradient border */
+    background: linear-gradient(135deg, #e91e63, #ff4081, #f48fb1);
+    margin-right: 1.5rem;
+}
+
+.cover-img {
+    display: block;
+    width: 160px; /* increased width */
+    height: 100px; /* added fixed height for uniformity */
+    border-radius: 10px;
+    border: 2px solid white;
+    object-fit: cover;
+}
+
+/* Text info next to the image */
+.info {
+    flex: 1;
+}
+
+.news-headline {
+    margin: 0 0 0.3rem;
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+.news-link {
+    color: #a31641; /* darker pinkish red */
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.15rem 0.3rem;
+    border: 1px solid #a31641;
+    border-radius: 4px;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.news-link:hover {
+    color: #f48fb1;
+    border-color: #f48fb1;
+    background-color: rgba(244, 143, 177, 0.1);
+}
+
+/* === BILLBOARD SIDEBAR === */
+#billboard {
+    flex: 0 0 350px;
+    max-width: 350px;
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow:
+        0 0 8px rgba(233, 30, 99, 0.6),
+        /* subtle pink glow */ 0 2px 5px rgba(0, 0, 0, 0.05); /* existing subtle black shadow */
+    position: relative; /* Added for the gradient border */
+    border: 2px solid transparent; /* Added for the gradient border */
+    background-clip: padding-box; /* Added for the gradient border */
+}
+
+#billboard::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    left: -2px;
+    right: -2px;
+    border-radius: 10px; /* Matched to the billboard's border-radius */
+    background: linear-gradient(135deg, #e91e63, #ff4081, #f48fb1);
+    z-index: -1;
+}
+
+#billboard-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chart-entry {
+    margin-bottom: 1.2rem;
+    padding: 0.8rem;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+    border-radius: 6px;
+}
+
+.chart-entry:hover {
+    background-color: #f9f9f9;
+}
+
+.chart-entry .rank {
+    font-weight: bold;
+    color: #4b4b4b;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chart-entry .title {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--accent);
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+.chart-entry .artist {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+    color: var(--secondary);
+    font-style: italic;
+}
+
+.chart-stats {
+    list-style: none;
+    padding: 0.5rem 0 0;
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--secondary);
+    line-height: 1.4;
+    padding-left: 1rem;
+}
+
+/* === CTA Button === */
+.see-full-chart {
+    background-color: var(--accent); /* Changed background to accent color */
+    color: var(--card-bg); /* Changed text color to white/card-bg */
+    border: 2px solid var(--accent); /* Added a border in accent color */
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease; /* Added border-color to transition */
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(233, 30, 99, 0.2); /* Added a subtle shadow */
+}
+
+.see-full-chart:hover {
+    background-color: #c71585; /* Slightly darker accent on hover */
+    border-color: #c71585; /* Match border color on hover */
+    box-shadow: 0 4px 8px rgba(233, 30, 99, 0.3); /* Enhanced shadow on hover */
+}
+
+/* READ MORE link */
+#read-more {
+    display: block;
+    margin-top: 1.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--accent);
+    text-decoration: none;
+    border: 2px solid var(--accent);
+    border-radius: 6px;
+    padding: 0.35rem 0.75rem;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background-color 0.2s ease;
+    width: fit-content;
+}
+
+#read-more:hover {
+    background-color: rgba(233, 30, 99, 0.1);
+    color: #c71585;
+    border-color: #c71585;
+}
+
+#news-head {
+    font-size: 2.2rem; /* You can adjust this value to make it bigger or smaller */
+    margin-bottom: 0.5rem; /* Optional: Adds a little more space below the headline */
+    color: var(--primary); /* Optional: Ensures it uses your primary text color if it changed */
+}

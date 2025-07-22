@@ -1,0 +1,85 @@
+{
+  "website": "https://www.billboard.com/c/music/music-news/",
+  "data": [
+    {
+      "img": {
+        "src": "https://www.billboard.com/wp-content/uploads/2025/06/lady-gaga-rio-de-janeiro-mayhem-2025-billboard-1548.jpg?w=375&h=250&crop=1",
+        "alt": "RIO DE JANEIRO, BRAZIL - MAY 3: Lady Gaga performs at Copacabana Beach on May 3, 2025 in Rio de Janeiro, Brazil.  (Photo by Kevin Mazur/WireImage for Live Nation)"
+      },
+      "headline": "Lady Gaga Slips & Falls Mid-Concert at Las Vegas Mayhem Ball Stop, But Recovers Like a Pro",
+      "link": "https://www.billboard.com/music/music-news/lady-gaga-slips-falls-recovers-mayhem-ball-concert-vegas-1236026885/"
+    },
+    {
+      "img": {
+        "src": "https://www.billboard.com/wp-content/uploads/2025/01/taylor-swift-caitlin-clark-chiefs-game-jan-18-2025-billboard-1548.jpg?w=375&h=250&crop=1",
+        "alt": "Taylor Swift Caitlin Clark Chiefs game"
+      },
+      "headline": "Caitlin Clark Reveals What She & Taylor Swift Were Really Whispering About at Kansas City Chiefs Game",
+      "link": "https://www.billboard.com/music/music-news/caitlin-clark-reveals-taylor-swift-whispered-chiefs-game-1236026805/"
+    },
+    {
+      "img": {
+        "src": "https://www.billboard.com/wp-content/uploads/2025/05/Shakira-tour-jersey-02-2025-billboard-1548.jpg?w=375&h=250&crop=1",
+        "alt": "Shakira"
+      },
+      "headline": "Shakira & The Weeknd to Headline 2025 Global Citizen Festival in Central Park",
+      "link": "https://www.billboard.com/music/music-news/shakira-weeknd-headline-2025-global-citizen-fest-new-york-1236026709/"
+    },
+    {
+      "img": {
+        "src": "https://www.billboard.com/wp-content/uploads/2025/07/stevie-nicks-lindsay-buckingham-2018-billboard-1548.jpg?w=375&h=250&crop=1",
+        "alt": "Stevie Nicks and Lindsey Buckingham of Fleetwood Mac perform onstage during MusiCares Person of the Year honoring Fleetwood Mac at Radio City Music Hall on January 26, 2018 in New York City.  (Photo by Kevin Mazur/Getty Images for NARAS)"
+      },
+      "headline": "Stevie Nicks and Lindsey Buckingham Tease Project With Sunset Boulevard Billboard",
+      "link": "https://www.billboard.com/music/music-news/stevie-nicks-lindsey-buckingham-reunion-1236026670/"
+    },
+    {
+      "img": {
+        "src": "https://www.billboard.com/wp-content/uploads/2025/07/Ed-Sheeran-Performs-In-Madrid-may-2025-billboard-1548.jpg?w=375&h=250&crop=1",
+        "alt": "Ed Sheeran"
+      },
+      "headline": "Ed Sheeran Announces 2026 Australian & New Zealand Loop Tour Dates",
+      "link": "https://www.billboard.com/music/music-news/ed-sheeran-2026-australian-new-zealand-loop-tour-1236026649/"
+    },
+    {
+      "img": {
+        "src": "https://www.billboard.com/wp-content/uploads/2025/01/stevie-wonder-fireaid-benefit-concert-la-2025-billboard-1548.jpg?w=375&h=250&crop=1",
+        "alt": "Stevie Wonder performs onstage during the FIREAID Benefit Concert for California Fire Relief at Intuit Dome on January 30, 2025 in Inglewood, California. (Photo by Amy Sussman/Getty Images for FIREAID)"
+      },
+      "headline": "Stevie Wonder Says He’ll Never Give Up Performing: ‘You Don’t Have to Retire’",
+      "link": "https://www.billboard.com/music/music-news/stevie-wonder-says-never-give-up-performing-1236026664/"
+    },
+    {
+      "img": {
+        "src": "https://www.billboard.com/wp-content/uploads/2024/04/Nick-Cave-attends-the-World-Premiere-of-Back-To-Black-2024-billboard-1548.jpg?w=375&h=250&crop=1",
+        "alt": "Nick Cave"
+      },
+      "headline": "Nick Cave Reflects on Lessons of Grief on Anniversary of Son’s Passing",
+      "link": "https://www.billboard.com/music/music-news/nick-cave-reflects-lessons-grief-anniversary-son-death-1236026651/"
+    },
+    {
+      "img": {
+        "src": "https://www.billboard.com/wp-content/uploads/2025/07/Billy-Ray-and-Noah-Cyrus-grammy-2020-a-billboard-1548.jpg?w=375&h=250&crop=1",
+        "alt": "Billy Ray Cyrus and Noah Cyrus"
+      },
+      "headline": "Noah Cyrus Duets With Dad Billy Ray at Album Release Show: ‘It’s Always Been the Gift of Music That’s Brought Us Together’",
+      "link": "https://www.billboard.com/music/music-news/noah-cyrus-dad-billy-ray-duet-album-release-show-1236026543/"
+    },
+    {
+      "img": {
+        "src": "https://www.billboard.com/wp-content/uploads/2025/07/YURIYAN-RETRIEVER-and-yonkey-Photo-Maho-Korogi-bbjapan-billboard-1548.jpg?w=375&h=250&crop=1",
+        "alt": "YURIYAN RETRIEVER and yonkey"
+      },
+      "headline": "YURIYAN RETRIEVER In Conversation With Producer yonkey: Inside the Creative Process of Her Debut Single",
+      "link": "https://www.billboard.com/music/music-news/yuriyan-retriever-yonkey-interview-1236026498/"
+    },
+    {
+      "img": {
+        "src": "https://www.billboard.com/wp-content/uploads/2024/12/demi-lovato-2024-Rock-Roll-Hall-Of-Fame-Induction-Ceremony-Portraits-billboard-1548.jpg?w=375&h=250&crop=1",
+        "alt": "Demi Lovato"
+      },
+      "headline": "Demi Lovato’s Pop Sound Coming Back From the Dead on ‘Celebratory’ New Dance Album",
+      "link": "https://www.billboard.com/music/music-news/demi-lovato-pop-music-return-new-album-1236026397/"
+    }
+  ]
+}

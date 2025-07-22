@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="./images/favicon-32x32.png" type="image/x-icon" />
+        <link rel="stylesheet" href="/style.css" />
+        <script defer src="/app.js" type="module"></script>
+        <title>MusicViz</title>
+    </head>
+    <body>
+        <nav id="navbar">
+            <a href="/" id="heading-link">
+                <h1 id="website-heading">🎵 MusicViz</h1>
+            </a>
+            <div id="nav-items">
+                <a href="/artist/search" class="nav-link">Artist Search</a>
+                <span class="separator">|</span>
+                <a href="#" class="nav-link">Favorite Artists</a>
+                <span class="separator">|</span>
+                <a href="/billboard/full" class="nav-link"> BillBoard Hot 100</a>
+                <span class="separator">|</span>
+                <a href="#" class="nav-link">Random Song</a>
+            </div>
+        </nav>
+        <div id="main-body">
+            <div id="song-of-the-day"></div>
+            <div id="news-container">
+                <h2 id="news-head">🎵 Music News of the Day</h2>
+                <p>Updated every hour!</p>
+                <a id="read-more" href="#" target="_blank"> READ MORE</a>
+                <ul id="news-list"></ul>
+            </div>
+            <div id="billboard">
+                <h1 id="billboard-head">BillBoard Hot 100</h1>
+                <h3><button class="see-full-chart" onclick="location.href = '/billboard/full'">See Full BillBoard!</button></h3>
+                <ul id="billboard-list"></ul>
+            </div>
+        </div>
+    </body>
+</html>

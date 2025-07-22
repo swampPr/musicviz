@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>🎵 Page Not Found</title>
+        <style>
+            /* Define your color variables for consistency */
+            :root {
+                --primary: #111;
+                --accent: #e91e63; /* Your pink accent color */
+                --bg: #fdfdfd; /* Your background color */
+                --card-bg: #ffffff; /* Your card background color */
+            }
+
+            /* Basic styling for the body to center content */
+            body {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh; /* Make sure it takes full viewport height */
+                background-color: var(--bg);
+                color: var(--primary);
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                text-align: center;
+                padding: 20px; /* Add some padding */
+                box-sizing: border-box; /* Include padding in element's total width and height */
+                overflow: hidden; /* Prevent scrollbars if letter falls off screen */
+            }
+
+            /* Styling for the main heading */
+            h1 {
+                font-size: 3rem; /* Make the main heading large */
+                color: var(--accent); /* Apply the pink accent color */
+                margin-bottom: 1rem; /* Space below the heading */
+                display: inline-block; /* Allows the span inside to be positioned relative to it */
+                position: relative; /* Needed for absolute positioning of falling letter */
+            }
+
+            /* Styling for the anchor tag (link) */
+            #back-link {
+                font-size: 1.5rem; /* Make the link text a bit larger */
+                color: white; /* Apply the pink accent color */
+                text-decoration: none; /* Remove the underline */
+                border: solid;
+                border-radius: 25px;
+                padding: 10px;
+                background-color: var(--accent);
+                font-weight: bold; /* Make it bold */
+                transition: color 0.2s ease; /* Smooth transition for hover effect */
+            }
+            #back-link:hover {
+                color: black; /* Slightly darker pink on hover */
+            }
+
+            /* --- CSS for Falling Letter Animation --- */
+            /* Style for the letter that will fall */
+            .falling-letter {
+                display: inline-block; /* Allows transform properties */
+                position: absolute; /* Take it out of normal flow */
+                /* Adjusted 'left' value to position the 'd' correctly */
+                /* This value is an estimate. You might need to fine-tune it
+                               slightly (e.g., 88.5% or 89%) to perfectly align with the 'd'
+                               depending on your browser, font rendering, and exact font size. */
+                left: 103.5%; /* Moved a tiny bit further to the right for better alignment */
+                transform: translateX(-50%); /* Still centers the letter itself on the 'left' point */
+                white-space: nowrap; /* Prevent the letter from wrapping */
+                animation: fallOff 2s ease-out 1s forwards; /* Animation name, duration, timing, delay, fill-mode */
+                opacity: 1; /* Start visible */
+                z-index: 1; /* Ensure it's above other text if needed */
+            }
+
+            /* Keyframes for the falling animation */
+            @keyframes fallOff {
+                0% {
+                    transform: translate(-50%, 0) rotate(5deg);
+                    left: 105.5%;
+                    opacity: 1;
+                }
+                20% {
+                    /* Small bounce or wiggle at the start */
+                    transform: translate(-50%, -10px) rotate(8deg);
+                    left: 105.5%;
+                }
+                100% {
+                    /* Topples over, moves down slightly, and stays visible */
+                    transform: translate(-50%, 30px) rotate(120deg); /* Adjust 30px for vertical drop, 90deg for rotation */
+                    opacity: 1; /* Stays visible */
+                    left: 105.5%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <h1>🎵 MusicViz</h1>
+        <h1>Page Not Foun<span class="falling-letter">d </span></h1>
+        <h3><a id="back-link" href="/" target="_self">Click here to go back</a></h3>
+    </body>
+</html>

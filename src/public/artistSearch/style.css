@@ -1,0 +1,88 @@
+:root {
+    --primary: #111;
+    --secondary: #555;
+    --accent: #e91e63;
+    --bg: #fefefe;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--primary);
+    padding: 0 1rem;
+}
+
+#navbar {
+    width: 100%;
+    background-color: #222;
+    padding: 1rem;
+    color: var(--primary);
+    display: flex;
+    flex-direction: column; /* vertical stack */
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(233, 30, 99, 0.15); /* subtle pink shadow */
+}
+
+#website-heading {
+    font-size: 3rem; /* bigger */
+    font-weight: 900;
+    margin: 0;
+    line-height: 1;
+    color: var(--accent);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+#nav-items {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.nav-link {
+    color: #eee;
+    text-decoration: none;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    background-color: var(--accent);
+    color: var(--card-bg);
+}
+
+.separator {
+    color: var(--accent);
+    user-select: none;
+    padding: 0 0.3rem;
+}
+
+#heading-link {
+    text-decoration: none;
+    color: var(--accent);
+    cursor: pointer;
+    display: inline-block; /* to avoid the clickable area spreading too much */
+}
+
+#heading-link:hover {
+    color: #c71585; /* a darker pink on hover for nice effect */
+    text-decoration: none;
+}
