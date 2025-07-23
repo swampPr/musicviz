@@ -67,6 +67,7 @@ function renderBillBoard(billboardOBJ) {
         })
         .join('');
 
+    document.getElementById('loading-billboard').remove();
     billboardList.innerHTML = listItems;
 }
 
@@ -92,6 +93,7 @@ function renderNews(newsOBJ) {
 
     document.getElementById('read-more').href = newsOBJ.website;
     document.getElementById('read-more').style.display = 'block';
+    document.getElementById('loading-news').remove();
     newsList.innerHTML = listItems;
 }
 

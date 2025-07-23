@@ -1,5 +1,5 @@
-import {Router} from 'express';
-import {getNews} from '../handlers/newsHandler.js';
+import { Router } from 'express';
+import { getNews } from '../handlers/newsHandler.js';
 
 const router = Router();
 

@@ -329,5 +329,25 @@ body {
 #news-head {
     font-size: 2.2rem; /* You can adjust this value to make it bigger or smaller */
     margin-bottom: 0.5rem; /* Optional: Adds a little more space below the headline */
-    color: var(--primary); /* Optional: Ensures it uses your primary text color if it changed */
+    color: var(--accent); /* Optional: Ensures it uses your primary text color if it changed */
+}
+
+.loading-text {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--accent);
+    font-style: italic;
+    /* even optional animation */
+    animation: fadePulse 1.5s infinite ease-in-out;
+}
+
+@keyframes fadePulse {
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+    50% {
+        opacity: 1;
+    }
 }

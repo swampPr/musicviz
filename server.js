@@ -1,4 +1,5 @@
 import express from 'express';
+import { genToken } from './src/backend/services/artistSearchService.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import mainRouter from './src/backend/routes/mainRoute.js';
@@ -23,4 +24,11 @@ app.use((req, res) => {
     res.status(404).sendFile(path.join(__dirname, 'src/public/notFound/index.html'));
 });
 
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.listen(PORT, async () => {
+    console.log(`Listening on port ${PORT}`);
+    try {
+        await genToken();
+    } catch (err) {
+        console.log(err);
+    }
+});

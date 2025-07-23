@@ -46,11 +46,22 @@ export async function serveBillboard() {
             console.log('RETURNING CACHED DATA');
 
             return JSON.parse(cachedData);
+        } else {
+            try {
+                const freshBillBoard = await fetchBillboard();
+                return freshBillBoard;
+            } catch (err) {
+                throw err;
+            }
         }
     } else {
         try {
-            const freshBillBoard = await fetchBillboard();
-            return freshBillBoard;
+            const freshData = await fetchBillboard();
+            writeBillBoardCache(freshData);
+
+            console.log('RETURNING FRESH DATA');
+
+            return freshData;
         } catch (err) {
             throw err;
         }
