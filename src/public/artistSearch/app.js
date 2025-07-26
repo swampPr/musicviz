@@ -31,10 +31,12 @@ function renderResults(artistsResults) {
             <li id="artist-result"> 
                 <div class="result-card">
                     <div id="img-container">
-                        <img src="${artist.image ? artist.image : './images/fallback.png'}" alt="${artist.artist}"  class="artist-img"/>
+                        <img src="${artist.image ? artist.image : './images/fallback160.png'}" alt="${artist.artist}"  class="artist-img"/>
                     </div>
                     <div id="artist-info">
-                        <p id="artist-name">${artist.artist}</p>
+                        <a class="artist-name-link" " href="/artist/info?id=${artist.artistID}">
+                            <p class="artist-name" >${artist.artist}</p>
+                        </a>
                         <p id="artist-genre"> ${artist.mainGenre ? artist.mainGenre.toUpperCase() : 'No Genre Found'}</p>
                     </div>
                 </div>
@@ -58,12 +60,14 @@ function renderResults(artistsResults) {
 
 document.getElementById('artist-submit').addEventListener('click', async () => {
     const artistsResults = await fetchArtists(textInput.value);
+    console.log(artistsResults);
     renderResults(artistsResults);
 });
 
 textInput.addEventListener('keydown', async (e) => {
     if (e.key === 'Enter') {
         const artistsResults = await fetchArtists(textInput.value);
+        console.log(artistsResults);
         renderResults(artistsResults);
     }
 

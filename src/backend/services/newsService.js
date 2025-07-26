@@ -71,7 +71,6 @@ async function scrapeNews() {
 
 //NOTE: This is the main function. It checks for whether the information has been cached, if so it returns the cached data, if not it will scrape for the data
 export async function fetchNews() {
-    console.log('NEWS SERVICE GOT REQUEST');
     if (fs.existsSync(cacheFile)) {
         const stats = fs.statSync(cacheFile);
         const modifiedTime = new Date(stats.mtime).getTime();
@@ -82,22 +81,18 @@ export async function fetchNews() {
             if (!cachedData.trim()) {
                 const freshData = await scrapeNews();
                 writeNewsCache(freshData);
-                console.log('RETURNING FRESH DATA');
                 return freshData;
             }
 
-            console.log('RETURNING CACHED DATA');
             return JSON.parse(cachedData);
         } else {
             const freshData = await scrapeNews();
             writeNewsCache(freshData);
-            console.log('RETURNING FRESH DATA');
             return freshData;
         }
     } else {
         const freshData = await scrapeNews();
         writeNewsCache(freshData);
-        console.log('RETURNING FRESH DATA');
         return freshData;
     }
 }

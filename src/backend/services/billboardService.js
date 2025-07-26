@@ -39,11 +39,8 @@ export async function serveBillboard() {
                 const freshData = await fetchBillboard();
                 writeBillBoardCache(freshData);
 
-                console.log('RETURNING FRESH DATA');
                 return freshData;
             }
-
-            console.log('RETURNING CACHED DATA');
 
             return JSON.parse(cachedData);
         } else {
@@ -58,8 +55,6 @@ export async function serveBillboard() {
         try {
             const freshData = await fetchBillboard();
             writeBillBoardCache(freshData);
-
-            console.log('RETURNING FRESH DATA');
 
             return freshData;
         } catch (err) {

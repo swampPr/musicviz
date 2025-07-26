@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="./images/favicon-32x32.png" />
+        <link rel="stylesheet" href="./style.css" />
+        <script src="https://kit.fontawesome.com/6d57ec45ef.js" crossorigin="anonymous"></script>
+        <script defer src="./app.js" type="module"></script>
+        <title>Artist</title>
+    </head>
+    <body>
+        <nav id="navbar">
+            <a href="/" id="heading-link">
+                <h1 id="website-heading">🎵 MusicViz</h1>
+            </a>
+            <div id="nav-items">
+                <a href="/artist/search" class="nav-link">Artist Search</a>
+                <span class="separator">|</span>
+                <a href="#" class="nav-link">Favorite Artists</a>
+                <span class="separator">|</span>
+                <a href="/billboard/full" class="nav-link"> BillBoard Hot 100</a>
+                <span class="separator">|</span>
+                <a href="#" class="nav-link">Random Song</a>
+            </div>
+        </nav>
+        <div id="main-body">
+            <div id="img-container">
+                <img id="artist-img" src="./images/fallback.png" alt="" />
+            </div>
+            <div id="info-container">
+                <div id="artist-main-info">
+                    <p id="loading-artist-info">Loading Info... This might take a bit!</p>
+                    <h2 id="artist-name"></h2>
+                    <a id="artist-spotify" target="_blank"><i class="fa-brands fa-spotify"></i> Artist's Spotify</a>
+                    <p id="genres-head"></p>
+                    <ul id="artist-genres"></ul>
+                </div>
+                <p id="loading-tracks">Loading Top Tracks... This might take a bit!</p>
+                <h4 id="tracks-head">Top Tracks</h4>
+                <ul id="top-tracks-list"></ul>
+                <p id="loading-albums">Loading albums... This might take a bit!</p>
+                <h4 id="albums-head">Albums</h4>
+                <ul id="albums-list"></ul>
+            </div>
+        </div>
+    </body>
+</html>

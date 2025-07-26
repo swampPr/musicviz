@@ -1,0 +1,333 @@
+:root {
+    --primary: #111;
+    --secondary: #555;
+    --accent: #e91e63;
+    --bg: #fdfdfd;
+    --card-bg: #ffffff;
+    --border-color: #e0e0e0;
+}
+
+/* === RESET === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--primary);
+    line-height: 1.5;
+    padding: 0 1rem;
+}
+
+#navbar {
+    width: 100%;
+    background-color: #222;
+    padding: 1rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(233, 30, 99, 0.15); /* pink accent */
+}
+
+#website-heading {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--accent);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    margin: 0;
+    user-select: none;
+}
+
+#heading-link {
+    text-decoration: none;
+    color: var(--accent);
+    display: inline-block;
+}
+
+#heading-link:hover {
+    color: #c71585;
+}
+
+/* Navbar items */
+#nav-items {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-wrap: wrap;
+    margin-top: 0.4rem;
+}
+
+.nav-link {
+    color: #eee;
+    text-decoration: none;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+    cursor: pointer;
+}
+
+.nav-link:hover {
+    background-color: var(--accent);
+    color: var(--card-bg);
+}
+
+.separator {
+    color: var(--accent);
+    user-select: none;
+    padding: 0 0.3rem;
+}
+
+#main-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: auto;
+    padding-bottom: 3rem;
+}
+
+#img-container {
+    width: 220px;
+    height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+        0 0 20px rgba(233, 30, 99, 0.4),
+        0 0 10px rgba(233, 30, 99, 0.25);
+}
+
+#artist-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+#artist-main-info {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 16px;
+    background-color: var(--card-bg);
+    box-shadow: 0 0 14px rgba(233, 30, 99, 0.3);
+}
+
+#artist-name {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-top: 0.4rem;
+}
+
+#artist-spotify {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #1db954;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: text-shadow 0.2s ease;
+    text-shadow: 0 0 4px rgba(29, 185, 84, 0.3);
+}
+
+#artist-spotify:hover {
+    text-shadow: 0 0 10px rgba(29, 185, 84, 0.6);
+}
+
+#genres-head {
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+#artist-genres {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+}
+
+#genre {
+    padding: 0.3rem 0.7rem;
+    border-radius: 10px;
+    background-color: #fbe4ee;
+    color: #e91e63;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #e91e63;
+}
+
+#top-tracks-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+#track {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 0.8rem;
+    box-shadow: 0 0 8px rgba(233, 30, 99, 0.2);
+}
+
+.track-img-container,
+.album-img-container {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.track-img,
+.album-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.track-info,
+.album-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.track-name,
+.album-name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--primary);
+}
+
+.track-name:hover,
+.album-name:hover {
+    color: var(--accent);
+    text-shadow: 0 0 6px rgba(233, 30, 99, 0.3);
+}
+
+.track-duration,
+.album-release,
+.album-tracks {
+    font-size: 0.85rem;
+    color: var(--secondary);
+}
+
+.explicit {
+    font-size: 0.8rem;
+    color: white;
+    background-color: var(--primary);
+    padding: 0.1rem 0.4rem;
+    width: 1.2rem;
+    border-radius: 4px;
+    line-height: 1.2rem;
+    display: inline-block;
+    margin-top: 0.3rem;
+    font-weight: bold;
+}
+
+.album-link {
+    text-decoration: none;
+}
+
+.track-link {
+    text-decoration: none;
+}
+
+#albums-list {
+    display: flex; /* Added for flexbox layout */
+    flex-wrap: wrap; /* Added for wrapping behavior */
+    gap: 1rem;
+    padding: 0 1rem;
+    justify-content: center;
+    list-style: none; /* prevents browser bullets */
+}
+
+/* Override default vertical card layout for albums */
+.album {
+    display: flex; /* Ensure flexbox is enabled for internal content */
+    flex-direction: column; /* Stack contents vertically */
+    align-items: center; /* Center contents horizontally within the card */
+    width: 180px;
+    padding: 1rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(233, 30, 99, 0.2);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.album:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 12px rgba(233, 30, 99, 0.35);
+}
+
+.album-img-container {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 auto 0.7rem;
+}
+
+.album-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+.album-info {
+    text-align: center;
+}
+
+.album-name {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin: 0.4rem 0;
+}
+
+.album-release,
+.album-tracks {
+    font-size: 0.85rem;
+    color: var(--secondary);
+}
+
+.album-link {
+    text-decoration: none;
+}
+
+.album-link:hover .album-name {
+    color: var(--accent);
+    text-shadow: 0 0 6px rgba(233, 30, 99, 0.3);
+}

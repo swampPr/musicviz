@@ -15,7 +15,7 @@
  * NOTE: YOU WILL MOST LIKELY HAVE TO MIX AND MATCH REQUESTS FROM SPOTIFY AND OTHER SOURCES SO MAKE SURE TO DO RESEARCH AND TESTS
  */
 
-let ACCESS_TOKEN = null;
+export let ACCESS_TOKEN = null;
 
 export async function genToken() {
     const tokenUrl = 'https://accounts.spotify.com/api/token';
@@ -58,7 +58,8 @@ export async function fetchArtists(input) {
                 artist: artist.name,
                 mainGenre: artist.genres[0],
                 image: artist.images[2] ? artist.images[2].url : null,
-                artistAPILink: `${artist.href}`
+                artistAPILink: `${artist.href}`,
+                artistID: artist.id
             });
         });
 

@@ -10,11 +10,18 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use(express.json());
+app.use((req, res, next) => {
+    console.log('--------------------------------');
+    console.log(`${req.method} ${req.url}`);
+    console.log('--------------------------------');
+    next();
+});
 
 //NOTE: Serving static files
 app.use('/', express.static(path.join(__dirname, 'src/public/start')));
 app.use('/billboard/full', express.static(path.join(__dirname, 'src/public/billboard')));
 app.use('/artist/search', express.static(path.join(__dirname, 'src/public/artistSearch')));
+app.use('/artist/info', express.static(path.join(__dirname, 'src/public/artistInfo')));
 
 //NOTE: API Routes
 app.use('/api', mainRouter);

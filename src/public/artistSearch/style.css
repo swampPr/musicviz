@@ -141,7 +141,7 @@ body {
     margin-top: 1rem;
 }
 
-#artist-name {
+.artist-name {
     font-size: 1.1rem;
     font-weight: 600;
     color: var(--primary);
@@ -232,7 +232,7 @@ body {
     user-select: none;
 }
 
-#artist-name {
+.artist-name {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -261,4 +261,13 @@ body {
 #previous:hover {
     background: linear-gradient(135deg, #f50057, #ff4081);
     box-shadow: 0 0 12px rgba(245, 0, 87, 0.9);
+}
+
+a {
+    text-decoration: none;
+}
+
+.artist-name:hover {
+    color: var(--primary);
+    text-shadow: 0 0 12px rgba(245, 0, 87, 0.9);
 }
