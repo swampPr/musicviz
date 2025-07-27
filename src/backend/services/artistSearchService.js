@@ -1,4 +1,5 @@
 export let ACCESS_TOKEN = null;
+import chalk from 'chalk';
 
 export async function genToken() {
     const tokenUrl = 'https://accounts.spotify.com/api/token';
@@ -21,7 +22,7 @@ export async function genToken() {
     ACCESS_TOKEN = token.access_token;
 }
 
-export async function fetchArtists(input) {
+export async function fetchArtists(input, retries = 3) {
     try {
         const response = await fetch(`https://api.spotify.com/v1/search?q=${input}&type=artist&market=US`, {
             mode: 'cors',
@@ -48,7 +49,13 @@ export async function fetchArtists(input) {
 
         return responseOBJ;
     } catch (err) {
-        throw err;
+        //INFO: If the fetch doesn't work, recursively retry the call with delays until 3 errors are returned or 1 success
+        if (retries <= 0) {
+            throw err;
+        }
+        await new Promise((res, rej) => setTimeout(res, Math.ceil(Math.random() * 500)));
+        console.warn(chalk.bgRed(`API Call failed, retrying.. attempt number ${3 - retries + 1}`));
+        return await fetchArtists(input, retries - 1);
     }
 }
 

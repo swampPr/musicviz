@@ -1,4 +1,5 @@
 import express from 'express';
+import chalk from 'chalk';
 import { genToken } from './src/backend/services/artistSearchService.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -36,6 +37,7 @@ app.listen(PORT, async () => {
     try {
         await genToken();
     } catch (err) {
-        console.log(err);
+        console.warn(chalk.bgYellow(`API Call to token failed... retrying a second time.`));
+        await genToken().catch((err) => console.error(err));
     }
 });

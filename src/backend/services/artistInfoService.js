@@ -1,6 +1,7 @@
 import { ACCESS_TOKEN } from './artistSearchService.js';
+import chalk from 'chalk';
 
-export async function fetchArtistInfo(artistID) {
+export async function fetchArtistInfo(artistID, retries = 3) {
     try {
         const [info, topTracks, albums] = await Promise.all([fetchArtistMainInfo(artistID), fetchArtistTopTracks(artistID), fetchArtistAlbums(artistID)]);
 
@@ -12,7 +13,12 @@ export async function fetchArtistInfo(artistID) {
 
         return responseOBJ;
     } catch (err) {
-        throw err;
+        if (retries <= 0) {
+            throw err;
+        }
+        await new Promise((res, rej) => setTimeout(res, Math.random() * 500));
+        console.warn(chalk.bgRed(`API Call failed, retrying.. attempt number ${3 - retries + 1}`));
+        return await fetchArtists(input, retries - 1);
     }
 }
 

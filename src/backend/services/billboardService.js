@@ -1,4 +1,5 @@
 import { existsSync, statSync } from 'fs';
+import chalk from 'chalk';
 import { readBillBoardCache, writeBillBoardCache } from '../models/billboardModel.js';
 import { fileURLToPath } from 'url';
 import { join, dirname } from 'path';
@@ -10,7 +11,7 @@ const cacheFile = join(__dirname, '../DB/billboardCache.json');
 
 const threeDays = 3 * 24 * 60 * 60 * 1000; // 259200000
 
-async function fetchBillboard() {
+async function fetchBillboard(retries = 3) {
     try {
         const response = await fetch('https://raw.githubusercontent.com/mhollingshead/billboard-hot-100/main/recent.json', {
             mode: 'cors',
@@ -23,7 +24,11 @@ async function fetchBillboard() {
 
         return billboardJSON;
     } catch (err) {
-        throw err;
+        if (retries <= 0) {
+            throw err;
+        }
+        console.warn(chalk.blueBright(`API Call to billboard failed, retrying... attempt number ${3 - retries + 1}`));
+        return await fetchBillboard(retries - 1);
     }
 }
 
@@ -36,10 +41,12 @@ export async function serveBillboard() {
         if (modifiedTime - now < threeDays) {
             const cachedData = await readBillBoardCache();
             if (!cachedData.trim()) {
-                const freshData = await fetchBillboard();
-                writeBillBoardCache(freshData);
-
-                return freshData;
+                try {
+                    const freshData = await fetchBillboard();
+                    writeBillBoardCache(freshData);
+                } catch (err) {
+                    return freshData;
+                }
             }
 
             return JSON.parse(cachedData);
