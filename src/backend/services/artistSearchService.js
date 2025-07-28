@@ -20,6 +20,7 @@ export async function genToken() {
     const token = await res.json();
 
     ACCESS_TOKEN = token.access_token;
+    console.log(ACCESS_TOKEN);
 }
 
 export async function fetchArtists(input, retries = 3) {
